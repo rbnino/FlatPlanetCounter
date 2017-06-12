@@ -1,0 +1,29 @@
+﻿@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+@model FlatPlanetCounter.Models.CounterModels
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Counter</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>This is my Counter Project</h1>
+
+        <h2>Counter value is...@Model.Counter</h2>
+        <h3>Message: @Model.Message</h3>
+
+        <form action="/Counter/Index?prmCounter=@Model.Counter&prmButtonClicked=true" method="post">
+            <input type="submit" class="btn-primary" value="Click here..." />
+        </form>        
+    </div>
+</body>
+</html>
